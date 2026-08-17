@@ -1,5 +1,5 @@
 #inheritance new class make kore onno akta class theke
-
+#inheritance e constructor use kora jabe
 
 class person:                             #main class
     def __init__(self,fname,lname):
@@ -11,6 +11,5 @@ class person:                             #main class
 
 class student(person):        #new class j main class k use korte parbe
     pass
-
 a=student("Maya","Rahman")          #a hocce object jake student class e rakha hocce
 a.printname()

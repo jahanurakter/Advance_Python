@@ -1,6 +1,9 @@
+#python e akta constructor __init__ 
+#constructor k call korte hoy na
+
 class student:                      #class make 
     def __init__(self,a,b):         #__init__ akta constructor - jake call korte hoy na
-        self.roll=a                 
+        self.roll=a                 #parameter er modde roll ar gpa rakha hoise
         self.gpa=b
     def display(self):
         print(f"Roll={self.roll},GPA={self.gpa}")
