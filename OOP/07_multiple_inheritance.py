@@ -1,3 +1,5 @@
+#multiple - a class can take multiple parents
+
 class A:
     def display1(self):
         print("This is class A")

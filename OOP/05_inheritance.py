@@ -10,6 +10,6 @@ class person:                             #main class
         print(self.fname, self.lname)
 
 class student(person):        #new class j main class k use korte parbe
-    pass
+    pass                    #pass hocce place holder person er jonno amra hold kore rekheci
 a=student("Maya","Rahman")          #a hocce object jake student class e rakha hocce
 a.printname()

@@ -8,7 +8,9 @@ class student:                      #class make
     def display(self):
         print(f"Roll={self.roll},GPA={self.gpa}")
 
-jeffy=student(10, 4.75)         #parameter er value k kora hoyece     
-jeffy.display()
-Maya=student(8, 4.62)
-Maya.display()
+jeffy=student(10, 4.75)         #parameter er value k kora hoyece  and or moddei value diye dicci    
+# jeffy.display()
+jeffy.roll                      #roll k direct nicce ata attribute
+print(jeffy.roll)
+# Maya=student(8, 4.62)
+# Maya.display()

@@ -22,6 +22,6 @@ class details:                      #class make
     def display(self):
         print(f"Roll={self.roll},GPA={self.gpa}")
 
-kamal=details()                 #object kamal er class Student    
-kamal.set_value(5,3.8)              #function k call
+kamal=details()     #object create korse class diye ...#object kamal er class Student    
+kamal.set_value(5,3.8)              #function k call #method
 kamal.display()                     #output show er jonno
