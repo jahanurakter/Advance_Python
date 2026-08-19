@@ -1,4 +1,5 @@
 #Built in Polymorphic function
+#same method/function difference type parameter accpet kore
 print(len("Aksadur Rahman"))
 print(len([10, 20, 30]))
 

@@ -6,7 +6,7 @@ class student(ABC):
         self.x=a
         self.y=b
     @abstractmethod
-    def display(self): 
+    def display(self):                          #display method ta abstrat jeta child der modde thakbe
         print(f"This is {self.x} and {self.y}")
 class details(student):
     def set(self):
