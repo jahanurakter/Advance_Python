@@ -1,11 +1,11 @@
-#2ta class modde same jinish thakay overriding hocce
+#2ta class er modde same method thakle child method ta kaj korbe ata overriding hocce
 
 # Defining parent class
 class Parent():
     def ABC(self):
         # self.value = "Inside Parent"
         print("This is ABC")
-                                    #aki class er modde 2ta method er modde update ta nile seta overloading
+                                    #akta class er modde 2ta method same hole er modde update ta nile seta overloading
     # Parent's show method
     def ABC(self):
         print("This is ?")
