@@ -41,4 +41,5 @@ def total_inventory():
     for product in product_list:
         total += product["total_price"]
         count += 1
-        print("Total inventory:{total}")
+        print("Total inventory:{total},Total Count:{count}")
+        
