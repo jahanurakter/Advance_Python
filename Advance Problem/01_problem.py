@@ -22,4 +22,23 @@ def add_product():
         "p_quantity":p_quantity
     }
     product_list.append(p_data)
-add_product()
+    print("Product Successfully Added")
+def view_product():
+    for product in product_list:
+        print(product)
+
+def search_product():
+    product_id= input("Enter Product Id: ")
+    for product in product_list:
+        if product['p_id']==product_id:
+            print(product)
+        else:
+            print("Product Not Found")
+
+def total_inventory():
+    total=0
+    count=0
+    for product in product_list:
+        total += product["total_price"]
+        count += 1
+        
