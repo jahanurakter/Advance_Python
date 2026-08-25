@@ -51,8 +51,16 @@ def total_inventory():
 
 def up_product():
     product_id=input("Enter update: ")
-
-
+    
+    for product in product_list:
+            if product["p_id"] == product_id:
+                product["p_name"]=input("Enter New Product: ")
+                product["p_price"]=input("Enter New Price: ")
+                product["p_quantity"]=input("Enter New Quantity: ")
+                product["total_price"]=("Total New Price")
+                print("Update Successfully")
+            else:
+                continue
 def del_product():
     product_id = input("Enter Product Id: ")
 
@@ -70,8 +78,9 @@ while True:
 2. View Products
 3. Search Product
 4. Inventory Value
-5. Delete Product
-6. Exit
+5. Update Product
+6. Delete Product
+7. Exit
 """)
     option=input("Enter your choice: ")   
     if option == "1":
@@ -83,9 +92,9 @@ while True:
     elif option == "4":
         total_inventory()
     elif option == "5":
-        del_product()
-    elif option == "6":
         up_product()
+    elif option == "6":
+        del_product()
     elif option == "7":
         print("Thank you")
         break
