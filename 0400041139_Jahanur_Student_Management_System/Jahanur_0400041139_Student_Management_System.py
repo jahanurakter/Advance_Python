@@ -1,81 +1,131 @@
-Stu_Management=[]
-def add_student():
-    s_id = input("Enter your Id:")
-    s_name = input("Enter your name:")
-    s_age = int(input("Enter your age:"))
-    s_dept = input("Enter your dept:")
-    s_marks = float(input("Enter your marks:"))
+#Studen_management_system
 
-    marks=0
-    if 80<=marks<=100:
-        print("1st Division")
-    elif 60<=marks<=79:
-        print("2nd Division")
-    elif 40<=marks<=59:
-        print("3rd Division")
+stu_db = []
+
+def add_stu():
+    s_id = input("Enter your id: ")
+    s_name = input("Enter your name: ")
+    s_age = int(input("Enter your age: "))
+    s_dept = input("Enter your dept: ")
+    s_marks = float(input("Enter your marks: "))
+
+    if 80<=s_marks<=100:
+        s_grade = "1st Div"
+    elif 60<=s_marks<=79:
+        s_grade = "2nd Div"
+    elif 40<=s_marks<=59:
+        s_grade = "3rd Div"
+    elif 0<=s_marks<=39:
+        s_grade = "Fail"
     else:
-        print("Fail")
+        print("Input Valid Marks""\n"'Marks must be 0-100')
 
-    s_data={
-        "s_id": s_id,
-        "s_name": s_name,
+        return
+
+    stu ={
+        "s_id": s_id ,
+        "s_name": s_name ,
         "s_age": s_age,
         "s_dept": s_dept,
-        "s_marks": s_marks
-    }
+        "s_marks": s_marks,
+        "s_grade": s_grade
+        }
+    stu_db.append(stu)
+    print("Student Added Succesfully")
 
-    Stu_Management.append(s_data)
-    print("Student Add Successfully")
+def view_stu():
+    
+    if len(stu_db) == 0 :
+        print("Student not found")
+    print("Total student:", len(stu_db))
 
-def view():
-    for x in Stu_Management:
-        print(x)
+    for student in stu_db:
+        print(student)
+    
+def search_stu():
+    if len(stu_db) == 0:
+        print("Student not available")
+        return
+    search = input("Enter Id or Name for search: ")
+    for x in stu_db:
+     if x["s_id"] == search or x["s_name"].lower() == search.lower():
+         print(x)
+         return
+    print("Student not found")
+    return
 
-def search():
-    search_id = input("Enter your Id:")
-    # search_name = input("Enter yout name:")
+def update_stu():
+    if len(stu_db) == 0:
+            print("Student not available")
+            return
+    search = input("Enter Id for update: ")
+    for x in stu_db:
+         if x["s_id"] == search :
 
-    for x in Stu_Management:
-        if x["s_id"] == search_id:
-            # if x["s_name"]==search_name:
-            print(x)
+            x["s_name"] = input("Enter new name: ")
+            x["s_age"] = int(input("Enter new age: "))
+            x["s_dept"] = input("Enter new department: ")
 
-def delete():
-    stu_id = input("Enter your id:")
+            new_marks = float(input("Enter new marks: "))
 
-    for x in Stu_Management:
-        if x ["s_id"] == stu_id:
-            Stu_Management.remove(x)
-            print("Delete Succesfully")
-        else:
-            print("ID not found")
+            if 80<=new_marks<=100:
+                x ["s_grade"] = "1st Div"
+            elif 60<=new_marks<=79:
+                x ["s_grade"] = "2nd Div"
+            elif 40<=new_marks<=59:
+                x ["s_grade"] = "3rd Div"
+            elif 0<=new_marks<=39:
+                x ["s_grade"] = "Fail"
+            else:
+                    print("Input Valid Marks""\n"'Marks must be 0-100')
+                    return
+
+            x ["s_marks"] = new_marks
+
+            print("Student Updated Successfully")
+            return
+    print("Student not found")
+
+def del_stu():
+    if len(stu_db) == 0:
+            print("Student not available")
+            return
+    search = input("Enter Id for Delete: ")
+    for stu in stu_db:
+        if stu["s_id"] == search:
+            stu_db.remove(stu)
+            print("Student Remove Succesfully")
+            return
 
 while True:
     print('''
-    1.Add Student
-    2.View Student
-    3.Search Id Or Name
-    4.Delete Record
-    5.Exit
-    ''')
-    option = input("Enter Your Choice:")
+        1. For Add
+        2. For View
+        3. For Search
+        4. For Update
+        5. For Delete
+        6. Exit
+        ''')
+
+    option = input("Enter option between 1 to 6: ")
 
     if option == "1":
-        add_student()
+        add_stu()
     elif option == "2":
-        view()
+        view_stu()
     elif option == "3":
-        search()
+        search_stu()
     elif option == "4":
-        delete()
+        update_stu()
     elif option == "5":
+        del_stu()
+    elif option == "6":
         break
-
-
-
-
-
-
+    else:
+        print("Input Valid Option.")
 
 
     
+
+     
+     
